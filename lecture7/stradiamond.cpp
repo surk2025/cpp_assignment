@@ -6,7 +6,6 @@ int main(){
     int row;
     cout<<"enter the value rows :";
     cin>>row;
-    int mid=row/2+1;
     int nst=1;
     int nsp=row-1;
     for(int i=1;i<=2*row-1;i++){
