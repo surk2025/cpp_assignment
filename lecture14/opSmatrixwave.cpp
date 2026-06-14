@@ -15,33 +15,21 @@ int main(){
             cin>>arr[i][j];
         }    
     }
-    int j;
-    for(int i=0;i<m;i++){
-        int k=0;
-        int j=m-1;
-        while(k<j){
-        int temp=arr[i][k];
-        arr[i][k]=arr[i][j];
-        arr[i][j]=temp;
-        k++;
-        j--;
-        }
-    }
     for(int i=0;i<m;i++){
         int k=0;
         for(int j=m-1;j<n;j++){
             if(i%2!=0){
-            int temp=arr[i][k];
-            arr[i][k]=arr[i][j];
-            arr[i][j]=temp; 
+                int temp=arr[i][k];
+                arr[i][k]=arr[i][j];
+                arr[i][j]=temp;
             }
         }    
     }
-    cout<<"S Matrix: "<<endl;
-     for(int i=0;i<m;i++){
+    cout<<"opposite S Matrix: "<<endl;
+    for(int i=0;i<m;i++){
         for(int j=0;j<n;j++){
             cout<<arr[i][j]<<" ";
         } 
-        cout<<endl;  
     }
-}   
+    
+}
