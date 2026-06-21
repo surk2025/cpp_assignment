@@ -16,15 +16,34 @@ int main(){
             cin>>arr[i][j];
         }    
     }
-    int sum=0;
-    int x=1;
-    int sumn=0;
     for(int i=0;i<n;i++){
+        if(arr[i][0]==0){
+           for(int j=0;j<s;j++){
+            arr[i][j]=1-arr[i][j];
+            }
+        }
+    }
+    for(int j=0;j<s;j++){ 
+    int zero=0;
+    int ones=0;
+    for(int i=0;i<n;i++){
+        if(arr[i][j]==0) zero++;
+        else ones++; 
+    }  
+    for(int i=0;i<n;i++){
+        if(zero>ones){
+            if(arr[i][j]==0) arr[i][j]=1;
+            else arr[i][j]=0;
+        }    
+    }
+}
+    int sum=0;
+    for(int i=0;i<n;i++){
+        int x=1;
         for(int j=s-1;j>=0;j--){
             sum+=arr[i][j]*x;
             x*=2;
         }
-        sumn+=sum;    
-    }
-    cout<<"max score :"<<sumn;
+    } 
+    cout<<"max score :"<<sum;
 }   
