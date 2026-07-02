@@ -20,13 +20,14 @@ int main(){
         cin >> height[i];
     }
 
-    // Prefix maximum array
+     // Prefix maximum array
     vector<int> amax(n);
     amax[0] = height[0];
 
     for(int i=1;i<n;i++){
         amax[i] = max(amax[i-1], height[i]);
     }
+    int maxr=amax[n-1];
 
     // Suffix maximum array
     vector<int> bmax(n);
@@ -35,15 +36,14 @@ int main(){
     for(int i=n-2;i>=0;i--){
         bmax[i] = max(bmax[i+1], height[i]);
     }
-
-    // Calculate trapped water
-    int water = 0;
-
-    for(int i=0;i<n;i++){
-        water += min(amax[i], bmax[i]) - height[i];
+    int maxl=bmax[0];
+    // calculate max area
+    int gap=0;
+    for(int i=1;i<n;i++){
+        if(i-1>=gap) gap++;
+       
     }
-
-    cout << "Water trapped = " << water << endl;
-
-    return 0;
+    int mul = min(bmax[0],bmax[n-1]);
+    int maxArea =gap*mul;
+    cout<<maxArea<<gap<<mul;
 }
