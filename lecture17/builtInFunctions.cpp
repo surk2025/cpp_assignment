@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<algorithm>
 
 using namespace std;
 int main(){    //string str = "surjeet ka naam akash hai";    //cout<<str.size()<<endl; // or cout<<str.length();    //int size =str.size();
@@ -21,9 +22,9 @@ int main(){    //string str = "surjeet ka naam akash hai";    //cout<<str.size()
    // s = "kumar" + s;
    // cout<<s<<endl;
 
-   string str = "surjeet";
-   cout<<str<<endl;
-   reverse(str.begin(),str.end());
-   cout<<str<<endl;
+   string s = "surjeet";
+   cout<<s<<endl;
+   reverse(s.begin(),s.end()); // reverse(s.begin()+2,s.end()-1);
+   cout<<s<<endl;
 } 
-
+
